@@ -1,0 +1,148 @@
+{
+	"apartments": [
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №104",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 1,
+			"price": 6630500
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №105",
+			"square": 63.2,
+			"floor_count": 17,
+			"floor_current": 2,
+			"price": 6650759
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №106",
+			"square": 63.2,
+			"floor_count": 17,
+			"floor_current": 3,
+			"price": 6650759
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №107",
+			"square": 63.6,
+			"floor_count": 17,
+			"floor_current": 4,
+			"price": 6671314
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №108",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №109",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №110",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №111",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №112",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №113",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №114",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №115",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №116",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №117",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №118",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №119",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №120",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		},
+		{
+			"layout": "../../img/flat-furniture.svg",
+			"flat": "3-комнатная №121",
+			"square": 63.1,
+			"floor_count": 17,
+			"floor_current": 5,
+			"price": 6679554
+		}
+	]
+}
