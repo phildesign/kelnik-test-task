@@ -1,0 +1,56 @@
+.filter
+  height: 372px
+  display: flex
+  flex-direction: column
+  grid-column: 2/-1
+  background: linear-gradient(135deg, rgba(174, 228, 178, 0.3) 0%, rgba(149, 208, 161, 0.3) 100%)
+  border-radius: 10px
+  padding: 40px
+  &__rooms
+    display: grid
+    grid-template-columns: repeat(4, 44px)
+    gap: 16px
+    margin-bottom: 24px
+  &__room
+    width: 44px
+    height: 44px
+    display: flex
+    justify-content: center
+    align-items: center
+    font-weight: 400
+    font-size: 16px
+    line-height: 24px
+    background: #FFFFFF
+    border: none
+    border-radius: 100px
+    cursor: pointer
+  &__room_active
+    color: #FFFFFF
+    background: #3EB57C
+    box-shadow: 0px 6px 20px #95D0A1
+  &__title
+    font-weight: 400
+    font-size: 14px
+    line-height: 20px
+    margin-bottom: 10px
+  &__btn-reset
+    max-width: 160px
+    position: relative
+    font-weight: 400
+    font-size: 14px
+    line-height: 20px
+    color: #000000
+    background: none
+    border: none
+    cursor: pointer
+    padding-right: 15px
+    &::after
+      content: ''
+      width: 8px
+      height: 8px
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      background: url('../../img/cross-mini.svg')
+      margin: auto
