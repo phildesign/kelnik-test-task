@@ -33,4 +33,27 @@ document.addEventListener('DOMContentLoaded', function () {
 		`;
 		});
 	};
+
+	const goTopBtn = document.querySelector('.apartments__btn-go-top');
+
+	const trackScroll = () => {
+		let scrolled = window.pageYOffset;
+
+		if (scrolled > 10) {
+			goTopBtn.classList.add('is-active');
+		}
+		if (scrolled < 10) {
+			goTopBtn.classList.remove('is-active');
+		}
+	};
+
+	const backToTop = () => {
+		if (window.pageYOffset > 0) {
+			window.scrollBy(0, -80);
+			setTimeout(backToTop, 10);
+		}
+	};
+
+	window.addEventListener('scroll', trackScroll);
+	goTopBtn.addEventListener('click', backToTop);
 });

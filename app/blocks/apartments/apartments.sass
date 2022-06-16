@@ -34,3 +34,27 @@
     border-radius: 25px
     cursor: pointer
     padding: 8px 22px
+  &__btn-go-top
+    display: none
+    width: 40px
+    height: 40px
+    background: linear-gradient(135deg, rgba(174, 228, 178, 0.9) 0%, rgba(149, 208, 161, 0.9) 100%)
+    border-radius: 100px
+    border: none
+    position: fixed
+    right: 32px
+    bottom: 32px
+    cursor: pointer
+    &::before
+      content: ''
+      width: 10px
+      height: 12px
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+      background: url('../../img/arrow-top.svg')
+    &.is-active
+      display: block
