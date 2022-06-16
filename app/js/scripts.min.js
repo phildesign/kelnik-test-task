@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const renderApartment = (apartments) => {
 		const apartmentsBox = document.querySelector('.apartments__box');
-		apartmentsBox.innerHTML = apartments.map((apartment) => {
+		apartmentsBox.innerHTML = apartments.slice(1, 6).map((apartment) => {
 			return `
 		  <div class="apartments__item">
 		    <div class="apartments__row">
