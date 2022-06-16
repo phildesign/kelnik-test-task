@@ -33,7 +33,9 @@
     font-weight: 400
     font-size: 14px
     line-height: 20px
-    margin-bottom: 10px
+    margin-bottom: 45px
+    &_two
+      margin-top: 30px
   &__btn-reset
     max-width: 160px
     position: relative
@@ -55,3 +57,21 @@
       bottom: 0
       background: url('../../img/cross-mini.svg')
       margin: auto
+
+.filter .noUi-target
+  height: 3px
+  background: linear-gradient(0deg, #0B1739, #0B1739), #FF0000
+
+.filter .noUi-connect
+  background: #3EB57C
+
+.filter .noUi-horizontal .noUi-handle
+  width: 14px
+  height: 14px
+  border: none
+  background: #3EB57C
+  box-shadow: none
+  border-radius: 100px
+
+.filter .noUi-handle:after, .filter .noUi-handle:before
+  display: none

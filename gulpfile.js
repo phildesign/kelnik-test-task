@@ -67,7 +67,11 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
 	return (
 		gulp
-			.src(['app/js/main.js'])
+			.src([
+				'app/libs/wnumb/wNumb.min.js',
+				'app/libs/nouislider/nouislider.min.js',
+				'app/js/main.js',
+			])
 			.pipe(concat('scripts.min.js'))
 			// .pipe(uglify()) // Mifify js (opt.)
 			.pipe(gulp.dest('app/js'))

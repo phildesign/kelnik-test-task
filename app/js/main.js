@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const renderApartment = (apartments) => {
 		const apartmentsBox = document.querySelector('.apartments__box');
-		apartmentsBox.innerHTML = apartments.slice(1, 6).map((apartment) => {
+		apartmentsBox.innerHTML = apartments.slice(0, 5).map((apartment) => {
 			return `
 		  <div class="apartments__item">
 		    <div class="apartments__row">
@@ -56,4 +56,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	window.addEventListener('scroll', trackScroll);
 	goTopBtn.addEventListener('click', backToTop);
+
+	let filterSliderPrice = document.getElementById('filter-slider-price');
+	let filterSliderSquare = document.getElementById('filter-slider-square');
+
+	noUiSlider.create(filterSliderPrice, {
+		start: [80, 120],
+		tooltips: [
+			wNumb({ decimals: 1 }), // tooltip with custom formatting
+			true, // tooltip with default formatting
+		],
+		range: {
+			min: 0,
+			max: 200,
+		},
+	});
+
+	noUiSlider.create(filterSliderSquare, {
+		start: [80, 120],
+		tooltips: [
+			wNumb({ decimals: 1 }), // tooltip with custom formatting
+			true, // tooltip with default formatting
+		],
+		range: {
+			min: 0,
+			max: 200,
+		},
+	});
 });
