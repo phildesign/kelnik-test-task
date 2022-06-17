@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const apartmentsCol = document.querySelectorAll('.apartments__col');
 
 		const removeActiveClass = () => {
-			apartmentsCol.forEach((item, index) => {
+			apartmentsCol.forEach((item) => {
 				item.querySelector('.apartments__top-title').classList.remove('is-active');
 				item.querySelectorAll('.apartments__top-controls-btn').forEach((item) => {
 					item.classList.remove('is-active');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			removeActiveClass();
 			event.currentTarget.classList.add('is-active');
 			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
-			sortByPrice('up');
+			sort('up', 'price');
 			renderApartments();
 		});
 
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			removeActiveClass();
 			event.currentTarget.classList.add('is-active');
 			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
-			sortByPrice('down');
+			sort('down', 'price');
 			renderApartments();
 		});
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			removeActiveClass();
 			event.currentTarget.classList.add('is-active');
 			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
-			sortBySquare('up');
+			sort('up', 'square');
 			renderApartments();
 		});
 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			removeActiveClass();
 			event.currentTarget.classList.add('is-active');
 			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
-			sortBySquare('down');
+			sort('down', 'square');
 			renderApartments();
 		});
 
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			removeActiveClass();
 			event.currentTarget.classList.add('is-active');
 			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
-			sortByFloor('up');
+			sort('up', 'floor_current');
 			renderApartments();
 		});
 
@@ -72,31 +72,16 @@ document.addEventListener('DOMContentLoaded', function () {
 			removeActiveClass();
 			event.currentTarget.classList.add('is-active');
 			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
-			sortByFloor('down');
+			sort('down', 'floor_current');
 			renderApartments();
 		});
 
-		const sortByPrice = (variant) => {
+		const sort = (variant, type) => {
 			if (variant === 'up') {
-				apartments.sort((a, b) => a.price - b.price);
+				console.log('up');
+				apartments.sort((a, b) => a[type] - b[type]);
 			} else if (variant === 'down') {
-				apartments.sort((a, b) => a.price - b.price).reverse();
-			}
-		};
-
-		const sortBySquare = (variant) => {
-			if (variant === 'up') {
-				apartments.sort((a, b) => a.square - b.square);
-			} else if (variant === 'down') {
-				apartments.sort((a, b) => a.square - b.square).reverse();
-			}
-		};
-
-		const sortByFloor = (variant) => {
-			if (variant === 'up') {
-				apartments.sort((a, b) => a.floor_current - b.floor_current);
-			} else if (variant === 'down') {
-				apartments.sort((a, b) => a.floor_current - b.floor_current).reverse();
+				apartments.sort((a, b) => a[type] - b[type]).reverse();
 			}
 		};
 
