@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		const sortByPriceDown = document.querySelector('#sort-by-price-down');
 		const sortBySquareUp = document.querySelector('#sort-by-square-up');
 		const sortBySquareDown = document.querySelector('#sort-by-square-down');
+		const sortByFloorUp = document.querySelector('#sort-by-floor-up');
+		const sortByFloorDown = document.querySelector('#sort-by-floor-down');
 		const apartmentsCol = document.querySelectorAll('.apartments__col');
 
 		const removeActiveClass = () => {
@@ -58,6 +60,22 @@ document.addEventListener('DOMContentLoaded', function () {
 			renderApartments();
 		});
 
+		sortByFloorUp.addEventListener('click', (event) => {
+			removeActiveClass();
+			event.currentTarget.classList.add('is-active');
+			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
+			sortByFloor('up');
+			renderApartments();
+		});
+
+		sortByFloorDown.addEventListener('click', (event) => {
+			removeActiveClass();
+			event.currentTarget.classList.add('is-active');
+			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
+			sortByFloor('down');
+			renderApartments();
+		});
+
 		const sortByPrice = (variant) => {
 			if (variant === 'up') {
 				apartments.sort((a, b) => a.price - b.price);
@@ -71,6 +89,14 @@ document.addEventListener('DOMContentLoaded', function () {
 				apartments.sort((a, b) => a.square - b.square);
 			} else if (variant === 'down') {
 				apartments.sort((a, b) => a.square - b.square).reverse();
+			}
+		};
+
+		const sortByFloor = (variant) => {
+			if (variant === 'up') {
+				apartments.sort((a, b) => a.floor_current - b.floor_current);
+			} else if (variant === 'down') {
+				apartments.sort((a, b) => a.floor_current - b.floor_current).reverse();
 			}
 		};
 
