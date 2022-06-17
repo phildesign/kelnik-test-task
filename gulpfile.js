@@ -65,22 +65,16 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-	return (
-		gulp
-			.src([
-				'app/libs/wnumb/wNumb.min.js',
-				'app/libs/nouislider/nouislider.min.js',
-				'app/js/main.js',
-			])
-			.pipe(concat('scripts.min.js'))
-			// .pipe(uglify()) // Mifify js (opt.)
-			.pipe(gulp.dest('app/js'))
-			.pipe(
-				browserSync.reload({
-					stream: true,
-				}),
-			)
-	);
+	return gulp
+		.src(['app/libs/ion.rangeSlider/ion.rangeSlider.min.js', 'app/js/main.js'])
+		.pipe(concat('scripts.min.js'))
+		.pipe(uglify()) // Mifify js (opt.)
+		.pipe(gulp.dest('app/js'))
+		.pipe(
+			browserSync.reload({
+				stream: true,
+			}),
+		);
 });
 
 gulp.task('code', function () {

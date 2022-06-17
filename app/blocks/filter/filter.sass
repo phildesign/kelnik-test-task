@@ -35,7 +35,7 @@
     font-weight: 400
     font-size: 14px
     line-height: 20px
-    margin-bottom: 45px
+    margin-bottom: 15px
     &_two
       margin-top: 30px
   &__btn-reset
@@ -60,25 +60,39 @@
       bottom: 0
       background: url('../../img/cross-mini.svg')
       margin: auto
+  &__tooltip-text
+    font-weight: 400
+    font-size: 16px
+    line-height: 24px
+    opacity: 0.5
 
-.filter .noUi-target
-  height: 3px
-  background: linear-gradient(0deg, #0B1739, #0B1739), #FF0000
-
-.filter .noUi-connect
-  background: #3EB57C
-
-.filter .noUi-horizontal .noUi-handle
-  width: 14px
-  height: 14px
-  border: none
-  background: #3EB57C
-  box-shadow: none
-  border-radius: 100px
-
-.filter .noUi-handle:after, .filter .noUi-handle:before
+.filter .irs-min, .filter .irs-max
   display: none
 
-.filter .noUi-tooltip
+.filter .irs--flat .irs-line, .filter .irs--flat .irs-bar
+  height: 3px
+
+.filter .irs-handle
+  width: 14px
+  height: 14px
+  top: 20px
+  background: #3EB57C
+  border-radius: 100px
+
+.filter .irs--flat .irs-handle>i:first-child
+  display: none
+
+.filter .irs--flat .irs-bar
+  background: #3EB57C
+
+.filter .irs--flat .irs-from, .filter .irs--flat .irs-single, .filter .irs--flat .irs-to
+  font-family: 'PT-Root-UI_Medium'
+  font-weight: 400
+  font-size: 16px
+  line-height: 24px
+  color: #000
   background: none
-  border: none
+  top: -10px
+
+.filter .irs--flat .irs-from:before, .irs--flat .irs-single:before, .irs--flat .irs-to:before
+  display: none

@@ -21,11 +21,11 @@
 		{
 			"layout": "../../img/flat-furniture.svg",
 			"flat": "3-комнатная №106",
-			"square": 63.2,
+			"square": 50.2,
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 3,
-			"price": 6650759
+			"price": 18000000
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -34,7 +34,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 4,
-			"price": 6671314
+			"price": 16000000
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -43,7 +43,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 14545676
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",

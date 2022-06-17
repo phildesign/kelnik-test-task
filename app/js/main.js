@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const sortByFloorUp = document.querySelector('#sort-by-floor-up');
 		const sortByFloorDown = document.querySelector('#sort-by-floor-down');
 		const apartmentsCol = document.querySelectorAll('.apartments__col');
+		const filterBtnReset = document.querySelector('.filter__btn-reset');
 
 		const removeActiveClass = () => {
 			apartmentsCol.forEach((item) => {
@@ -78,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		const sort = (variant, type) => {
 			if (variant === 'up') {
-				console.log('up');
 				apartments.sort((a, b) => a[type] - b[type]);
 			} else if (variant === 'down') {
 				apartments.sort((a, b) => a[type] - b[type]).reverse();
@@ -118,10 +118,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 
+		apartments.sort((a, b) => a.price - b.price); // base sort
+
 		const renderApartments = () => {
 			apartmentsBox.innerHTML = apartments
 				.filter((item) => item.room_count === roomCount)
-				.sort((item) => item.price)
 				.slice(0, sizePack)
 				.map((apartment) => {
 					return `
@@ -137,10 +138,12 @@ document.addEventListener('DOMContentLoaded', function () {
               <div class="apartments__item-text">${apartment.square}</div>
             </div>
             <div class="apartments__col">
-              <div class="apartments__item-text">${apartment.floor_current} из ${apartment.floor_count}</div>
+              <div class="apartments__item-text">${apartment.floor_current} из ${
+						apartment.floor_count
+					}</div>
             </div>
             <div class="apartments__col">
-              <div class="apartments__item-text">${apartment.price}</div>
+              <div class="apartments__item-text">${apartment.price.toLocaleString('ru')}</div>
             </div>
           </div>
         </div>
@@ -149,6 +152,38 @@ document.addEventListener('DOMContentLoaded', function () {
 				.join('');
 		};
 		renderApartments();
+
+		console.log(apartments[0].price, apartments[apartments.length - 1].price);
+
+		$('#filter-slider-price').ionRangeSlider({
+			type: 'double',
+			min: 0,
+			max: 20000000,
+			from: apartments[0].price,
+			to: apartments[apartments.length - 1].price,
+			prefix: '<span class="filter__tooltip-text">от </span>',
+		});
+
+		$('#filter-slider-square').ionRangeSlider({
+			type: 'double',
+			min: 0,
+			max: 20000000,
+			from: apartments[0].price,
+			to: apartments[apartments.length - 1].price,
+			prefix: '<span class="filter__tooltip-text">от </span>',
+		});
+
+		const filterSliderPrice = $('#filter-slider-price').data('ionRangeSlider');
+		const filterSliderSquare = $('#filter-slider-square').data('ionRangeSlider');
+
+		filterBtnReset.addEventListener('click', () => {
+			filterSliderPrice.reset();
+			filterSliderSquare.reset();
+		});
+
+		document.querySelectorAll('.irs-to .filter__tooltip-text').forEach((item) => {
+			item.textContent = 'до ';
+		});
 	};
 
 	const goTopBtn = document.querySelector('.apartments__btn-go-top');
@@ -173,31 +208,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	window.addEventListener('scroll', trackScroll);
 	goTopBtn.addEventListener('click', backToTop);
-
-	let filterSliderPrice = document.getElementById('filter-slider-price');
-	let filterSliderSquare = document.getElementById('filter-slider-square');
-
-	noUiSlider.create(filterSliderPrice, {
-		start: [80, 120],
-		tooltips: [
-			wNumb({ decimals: 1 }), // tooltip with custom formatting
-			true, // tooltip with default formatting
-		],
-		range: {
-			min: 0,
-			max: 200,
-		},
-	});
-
-	noUiSlider.create(filterSliderSquare, {
-		start: [80, 120],
-		tooltips: [
-			wNumb({ decimals: 1 }), // tooltip with custom formatting
-			true, // tooltip with default formatting
-		],
-		range: {
-			min: 0,
-			max: 200,
-		},
-	});
 });
