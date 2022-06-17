@@ -4,34 +4,48 @@ document.addEventListener('DOMContentLoaded', function () {
 			return response.json();
 		})
 		.then((data) => {
-			renderApartment(data.apartments);
+			createApartments(data.apartments);
 		});
 
-	const renderApartment = (apartments) => {
+	const createApartments = (apartments) => {
 		const apartmentsBox = document.querySelector('.apartments__box');
-		apartmentsBox.innerHTML = apartments.slice(0, 5).map((apartment) => {
-			return `
-		  <div class="apartments__item">
-		    <div class="apartments__row">
-		      <div class="apartments__col">
-		        <img src=${apartment.layout} alt="" class="apartments__item-img">
-		      </div>
-		      <div class="apartments__col">
-		        <div class="apartments__item-text">${apartment.flat}</div>
-		      </div>
-		      <div class="apartments__col">
-		        <div class="apartments__item-text">${apartment.square}</div>
-		      </div>
-		      <div class="apartments__col">
-		        <div class="apartments__item-text">${apartment.floor_current} из ${apartment.floor_count}</div>
-		      </div>
-		      <div class="apartments__col">
-		        <div class="apartments__item-text">${apartment.price}</div>
-		      </div>
-		    </div>
-		  </div>
-		`;
+		const btnLoadMore = document.querySelector('.apartments__btn-load-more');
+
+		let sizePack = 5;
+		btnLoadMore.addEventListener('click', (event) => {
+			sizePack += 20;
+			renderApartments();
+			if (apartments.length <= 5 || sizePack >= apartments.length) {
+				event.target.style.display = 'none';
+			}
 		});
+
+		const renderApartments = () => {
+			apartmentsBox.innerHTML = apartments.slice(0, sizePack).map((apartment) => {
+				return `
+        <div class="apartments__item">
+          <div class="apartments__row">
+            <div class="apartments__col">
+              <img src=${apartment.layout} alt="" class="apartments__item-img">
+            </div>
+            <div class="apartments__col">
+              <div class="apartments__item-text">${apartment.flat}</div>
+            </div>
+            <div class="apartments__col">
+              <div class="apartments__item-text">${apartment.square}</div>
+            </div>
+            <div class="apartments__col">
+              <div class="apartments__item-text">${apartment.floor_current} из ${apartment.floor_count}</div>
+            </div>
+            <div class="apartments__col">
+              <div class="apartments__item-text">${apartment.price}</div>
+            </div>
+          </div>
+        </div>
+      `;
+			});
+		};
+		renderApartments();
 	};
 
 	const goTopBtn = document.querySelector('.apartments__btn-go-top');
