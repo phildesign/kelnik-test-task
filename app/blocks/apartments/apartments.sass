@@ -8,10 +8,30 @@
     grid-template-columns: 80px 280px 120px 120px 120px
     gap: 20px
   &__col
+    display: flex
+    align-items: center
   &__top-title
     font-weight: 400
     font-size: 14px
     line-height: 20px
+  &__top-controls
+    display: flex
+    flex-direction: column
+  &__top-controls-btn
+    width: 7px
+    height: 4px
+    border: none
+    background: none
+    cursor: pointer
+  &__top-controls-btn-icon
+    width: 7px
+    height: 4px
+    display: block
+    &_down
+      transform: rotate(180deg)
+  &__top-controls-btn-up
+    margin-bottom: 2px
+  &__top-controls-btn-down
   &__box
     margin-bottom: 55px
   &__item

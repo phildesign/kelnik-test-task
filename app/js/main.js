@@ -8,9 +8,31 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 
 	const createApartments = (apartments) => {
+		let apartmentsArr = apartments;
+
 		const apartmentsBox = document.querySelector('.apartments__box');
 		const btnLoadMore = document.querySelector('.apartments__btn-load-more');
 		const filterRoomsBtns = document.querySelectorAll('.filter__room-input');
+		const sortByPriceUp = document.querySelector('#sort-by-price-up');
+		const sortByPriceDown = document.querySelector('#sort-by-price-down');
+
+		sortByPriceUp.addEventListener('click', () => {
+			sortByPrice('up');
+			renderApartments();
+		});
+
+		sortByPriceDown.addEventListener('click', () => {
+			sortByPrice('down');
+			renderApartments();
+		});
+
+		const sortByPrice = (variant) => {
+			if (variant === 'up') {
+				apartmentsArr.sort((a, b) => a.price - b.price);
+			} else if (variant === 'down') {
+				apartmentsArr.sort((a, b) => a.price - b.price).reverse();
+			}
+		};
 
 		let roomCount = 1;
 		filterRoomsBtns.forEach((room) => {
@@ -48,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const renderApartments = () => {
 			apartmentsBox.innerHTML = apartments
 				.filter((item) => item.room_count === roomCount)
+				.sort((item) => item.price)
 				.slice(0, sizePack)
 				.map((apartment) => {
 					return `
@@ -75,6 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				.join('');
 		};
 		renderApartments();
+
+		// const apartmentsItems = document.querySelectorAll('.apartments__item');
+		// console.log(Array.from(apartmentsItems.sort()));
 	};
 
 	const goTopBtn = document.querySelector('.apartments__btn-go-top');

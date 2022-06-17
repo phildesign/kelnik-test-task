@@ -7,7 +7,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 1,
-			"price": 6630500
+			"price": 14
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -16,7 +16,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 2,
-			"price": 6650759
+			"price": 15
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -25,7 +25,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 3,
-			"price": 6650759
+			"price": 16
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -34,7 +34,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 4,
-			"price": 6671314
+			"price": 17
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -43,7 +43,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 18
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -52,7 +52,7 @@
 			"room_count": 1,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 1
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -61,7 +61,7 @@
 			"room_count": 1,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 2
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -70,7 +70,7 @@
 			"room_count": 2,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 3
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -79,7 +79,7 @@
 			"room_count": 1,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 4
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -88,7 +88,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 5
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -97,7 +97,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 6
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -106,7 +106,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 7
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -115,7 +115,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 8
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -124,7 +124,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 9
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -133,7 +133,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 10
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -142,7 +142,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 11
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -151,7 +151,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 12
 		},
 		{
 			"layout": "../../img/flat-furniture.svg",
@@ -160,7 +160,7 @@
 			"room_count": 3,
 			"floor_count": 17,
 			"floor_current": 5,
-			"price": 6679554
+			"price": 13
 		}
 	]
 }
