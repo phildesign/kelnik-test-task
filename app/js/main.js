@@ -10,6 +10,31 @@ document.addEventListener('DOMContentLoaded', function () {
 	const createApartments = (apartments) => {
 		const apartmentsBox = document.querySelector('.apartments__box');
 		const btnLoadMore = document.querySelector('.apartments__btn-load-more');
+		const filterRoomsBtns = document.querySelectorAll('.filter__room-input');
+
+		let roomCount = 1;
+		filterRoomsBtns.forEach((room) => {
+			room.addEventListener('click', (event) => {
+				switch (+event.target.value) {
+					case 1:
+						roomCount = 1;
+						break;
+					case 2:
+						roomCount = 2;
+						break;
+					case 3:
+						roomCount = 3;
+						break;
+					case 4:
+						roomCount = 4;
+						break;
+					default:
+						roomCount = 1;
+						break;
+				}
+				renderApartments();
+			});
+		});
 
 		let sizePack = 5;
 		btnLoadMore.addEventListener('click', (event) => {
@@ -21,8 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 
 		const renderApartments = () => {
-			apartmentsBox.innerHTML = apartments.slice(0, sizePack).map((apartment) => {
-				return `
+			apartmentsBox.innerHTML = apartments
+				.filter((item) => item.room_count === roomCount)
+				.slice(0, sizePack)
+				.map((apartment) => {
+					return `
         <div class="apartments__item">
           <div class="apartments__row">
             <div class="apartments__col">
@@ -43,7 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
         </div>
       `;
-			});
+				})
+				.join('');
 		};
 		renderApartments();
 	};

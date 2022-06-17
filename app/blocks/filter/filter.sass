@@ -12,7 +12,7 @@
     grid-template-columns: repeat(4, 44px)
     gap: 16px
     margin-bottom: 24px
-  &__room
+  &__room-label
     width: 44px
     height: 44px
     display: flex
@@ -25,10 +25,12 @@
     border: none
     border-radius: 100px
     cursor: pointer
-  &__room_active
-    color: #FFFFFF
-    background: #3EB57C
-    box-shadow: 0px 6px 20px #95D0A1
+  &__room-input
+    display: none
+    &:checked ~ .filter__room-label
+      color: #FFFFFF
+      background: #3EB57C
+      box-shadow: 0px 6px 20px #95D0A1
   &__title
     font-weight: 400
     font-size: 14px

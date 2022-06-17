@@ -69,10 +69,22 @@
 </div>
             <div class="filter">
   <div class="filter__rooms">
-    <button class="filter__room">1к</button>
-    <button class="filter__room filter__room_active">2к</button>
-    <button class="filter__room">3к</button>
-    <button class="filter__room" disabled>4к</button>
+    <div class="filter__room">
+      <input id="1" type="radio" class="filter__room-input" name="room" value="1" checked></input>
+      <label for="1" class="filter__room-label">1к</label>
+    </div>
+    <div class="filter__room">
+      <input id="2" type="radio" class="filter__room-input" name="room" value="2"></input>
+      <label for="2" class="filter__room-label">2к</label>
+    </div>
+    <div class="filter__room">
+      <input id="3" type="radio" class="filter__room-input" name="room" value="3"></input>
+      <label for="3" class="filter__room-label">3к</label>
+    </div>
+    <div class="filter__room">
+      <input id="4" type="radio" class="filter__room-input" name="room" value="4"></input>
+      <label for="4" class="filter__room-label">4к</label>
+    </div>
   </div>
   <div class="filter__title">Стомость квартиры, ₽</div>
   <div id="filter-slider-price"></div>
