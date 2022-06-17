@@ -8,29 +8,69 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 
 	const createApartments = (apartments) => {
-		let apartmentsArr = apartments;
-
 		const apartmentsBox = document.querySelector('.apartments__box');
 		const btnLoadMore = document.querySelector('.apartments__btn-load-more');
 		const filterRoomsBtns = document.querySelectorAll('.filter__room-input');
 		const sortByPriceUp = document.querySelector('#sort-by-price-up');
 		const sortByPriceDown = document.querySelector('#sort-by-price-down');
+		const sortBySquareUp = document.querySelector('#sort-by-square-up');
+		const sortBySquareDown = document.querySelector('#sort-by-square-down');
+		const apartmentsCol = document.querySelectorAll('.apartments__col');
 
-		sortByPriceUp.addEventListener('click', () => {
+		const removeActiveClass = () => {
+			apartmentsCol.forEach((item, index) => {
+				item.querySelector('.apartments__top-title').classList.remove('is-active');
+				item.querySelectorAll('.apartments__top-controls-btn').forEach((item) => {
+					item.classList.remove('is-active');
+				});
+			});
+		};
+
+		sortByPriceUp.addEventListener('click', (event) => {
+			removeActiveClass();
+			event.currentTarget.classList.add('is-active');
+			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
 			sortByPrice('up');
 			renderApartments();
 		});
 
-		sortByPriceDown.addEventListener('click', () => {
+		sortByPriceDown.addEventListener('click', (event) => {
+			removeActiveClass();
+			event.currentTarget.classList.add('is-active');
+			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
 			sortByPrice('down');
+			renderApartments();
+		});
+
+		sortBySquareUp.addEventListener('click', (event) => {
+			removeActiveClass();
+			event.currentTarget.classList.add('is-active');
+			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
+			sortBySquare('up');
+			renderApartments();
+		});
+
+		sortBySquareDown.addEventListener('click', (event) => {
+			removeActiveClass();
+			event.currentTarget.classList.add('is-active');
+			event.currentTarget.parentElement.previousElementSibling.classList.add('is-active');
+			sortBySquare('down');
 			renderApartments();
 		});
 
 		const sortByPrice = (variant) => {
 			if (variant === 'up') {
-				apartmentsArr.sort((a, b) => a.price - b.price);
+				apartments.sort((a, b) => a.price - b.price);
 			} else if (variant === 'down') {
-				apartmentsArr.sort((a, b) => a.price - b.price).reverse();
+				apartments.sort((a, b) => a.price - b.price).reverse();
+			}
+		};
+
+		const sortBySquare = (variant) => {
+			if (variant === 'up') {
+				apartments.sort((a, b) => a.square - b.square);
+			} else if (variant === 'down') {
+				apartments.sort((a, b) => a.square - b.square).reverse();
 			}
 		};
 
@@ -98,9 +138,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				.join('');
 		};
 		renderApartments();
-
-		// const apartmentsItems = document.querySelectorAll('.apartments__item');
-		// console.log(Array.from(apartmentsItems.sort()));
 	};
 
 	const goTopBtn = document.querySelector('.apartments__btn-go-top');
