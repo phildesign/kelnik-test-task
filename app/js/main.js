@@ -118,11 +118,27 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 
+		let cloneArr = apartments.sort((a, b) => a.square - b.square);
+		let sortingApartmentsBySquare = Object.assign([], cloneArr);
+
 		apartments.sort((a, b) => a.price - b.price); // base sort
+
+		let filterFromPrice = 6630500; // base FromPrice
+		let filterToPrice = 100000000; // base ToPrice
+
+		let filterFromSquare = 50; // base FromSquare
+		let filterToSquare = 100; // base ToSquare
 
 		const renderApartments = () => {
 			apartmentsBox.innerHTML = apartments
-				.filter((item) => item.room_count === roomCount)
+				.filter(
+					(item) =>
+						item.room_count === roomCount &&
+						item.price > filterFromPrice &&
+						item.price < filterToPrice &&
+						item.square > filterFromSquare &&
+						item.square < filterToSquare,
+				)
 				.slice(0, sizePack)
 				.map((apartment) => {
 					setTimeout(() => {
@@ -167,8 +183,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		};
 		renderApartments();
 
-		console.log(apartments[0].price, apartments[apartments.length - 1].price);
-
 		$('#filter-slider-price').ionRangeSlider({
 			type: 'double',
 			min: 0,
@@ -176,15 +190,25 @@ document.addEventListener('DOMContentLoaded', function () {
 			from: apartments[0].price,
 			to: apartments[apartments.length - 1].price,
 			// prefix: '<span class="filter__tooltip-text">от </span>',
+			onChange: function (data) {
+				filterFromPrice = data.from;
+				filterToPrice = data.to;
+				renderApartments();
+			},
 		});
 
 		$('#filter-slider-square').ionRangeSlider({
 			type: 'double',
 			min: 0,
-			max: 20000000,
-			from: apartments[0].price,
-			to: apartments[apartments.length - 1].price,
+			max: 200,
+			from: sortingApartmentsBySquare[0].square,
+			to: sortingApartmentsBySquare[sortingApartmentsBySquare.length - 1].square,
 			// prefix: '<span class="filter__tooltip-text">от </span>',
+			onChange: function (data) {
+				filterFromSquare = data.from;
+				filterToSquare = data.to;
+				renderApartments();
+			},
 		});
 
 		const filterSliderPrice = $('#filter-slider-price').data('ionRangeSlider');
@@ -222,4 +246,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	window.addEventListener('scroll', trackScroll);
 	goTopBtn.addEventListener('click', backToTop);
+
+	// JQuery version
+	// $('.apartments__btn-go-top').click(function () {
+	// 	$('html, body').animate({ scrollTop: 0 }, 'slow');
+	// 	return false;
+	// });
 });
