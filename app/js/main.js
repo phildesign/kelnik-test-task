@@ -125,6 +125,14 @@ document.addEventListener('DOMContentLoaded', function () {
 				.filter((item) => item.room_count === roomCount)
 				.slice(0, sizePack)
 				.map((apartment) => {
+					setTimeout(() => {
+						const apartmentsItems = document.querySelectorAll('.apartments__item');
+						if (apartmentsItems.length < 5) {
+							btnLoadMore.style.visibility = 'hidden';
+						} else {
+							btnLoadMore.style.visibility = 'visible';
+						}
+					});
 					return `
         <div class="apartments__item">
           <div class="apartments__row">
