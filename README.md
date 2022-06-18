@@ -53,4 +53,8 @@ https://www.paratype.ru/fonts/pt/pt-root-ui
 - GULP
 - BEM
 
-Ссылка на GitHub Pages - https://phildesign.github.io/kelnik-test-task/
+#### How to start:
+
+- use node version 14.16.0
+- npm install
+- gulp
