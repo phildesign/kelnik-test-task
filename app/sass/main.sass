@@ -61,8 +61,21 @@ select
 	display: grid
 	grid-template-columns: 800px 400px
 	grid-template-rows: 55px auto auto
+	justify-content: center
 	gap: 80px
 	padding: 95px 0
+	@media (max-width: 1330px)
+		grid-template-columns: 500px 320px
+		gap: 28px
+		padding: 54px 10px
+	@media (max-width: 900px)
+		grid-template-columns: 1fr
+		grid-template-rows: auto
+		max-width: 80%
+		margin: 0 auto
+	@media (max-width: 900px)
+		max-width: 100%
+		padding: 54px 20px
 
 @import "../blocks/apartments/apartments.sass"
 @import "../blocks/filter/filter.sass"

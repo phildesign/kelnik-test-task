@@ -3,10 +3,22 @@
   &__top
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1)
     padding-bottom: 15px
+    & .apartments__col
+      &:first-child
+        @media (max-width: 1330px)
+          display: none
+      &:nth-child(2)
+        @media (max-width: 1330px)
+          display: none
   &__row
     display: grid
     grid-template-columns: 80px 280px 120px 120px 120px
     gap: 20px
+    position: relative
+    @media (max-width: 1330px)
+      grid-template-columns: 45px 78px 78px
+      grid-template-rows: auto auto
+      gap: 0 20px
   &__col
     display: flex
     align-items: center
@@ -41,12 +53,57 @@
   &__item
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1)
     padding: 25px 0 35px 0
+    & .apartments__row
+      @media (max-width: 1330px)
+        grid-template-columns: 45px 78px 78px auto 66px
+        grid-template-rows: auto auto
+        gap: 10px 20px
+      @media (max-width: 425px)
+        grid-template-columns: auto auto auto
+        grid-template-rows: auto auto auto
+    & .apartments__col
+      &:first-child
+        @media (max-width: 1330px)
+          grid-column: 5/-1
+          grid-row: 1/ -1
+        @media (max-width: 425px)
+          grid-column: 1/-1
+          grid-row: 3/-1
+      &:nth-child(2)
+        @media (max-width: 1330px)
+          grid-column: 1/5
+          grid-row: 1/2
+        @media (max-width: 425px)
+          grid-column: 1/-1
+
   &__item-img
   &__item-text
     font-family: 'PT-Root-UI_Medium', sans-serif
     font-weight: 400
     font-size: 16px
     line-height: 24px
+    @media (max-width: 1330px)
+      font-size: 14px
+      line-height: 20px
+  &__item-text-opacity
+    opacity: 0.5
+  &__item-text-floor
+    display: none
+    opacity: 0.5
+    @media (max-width: 1330px)
+      display: inline-block
+  &__square
+    display: none
+    @media (max-width: 1330px)
+      display: inline-block
+      font-size: 14px
+      line-height: 20px
+    sup
+      font-size: 9px
+  &__item-rub
+    display: none
+    @media (max-width: 1330px)
+      display: inline-block
   &__btn-load-more
     max-width: 156px
     height: 40px

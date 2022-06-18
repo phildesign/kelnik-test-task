@@ -135,15 +135,21 @@ document.addEventListener('DOMContentLoaded', function () {
               <div class="apartments__item-text">${apartment.flat}</div>
             </div>
             <div class="apartments__col">
-              <div class="apartments__item-text">${apartment.square}</div>
+              <div class="apartments__item-text">${
+								apartment.square
+							} <span class="apartments__square">м<sup>2</sup></span></div>
             </div>
             <div class="apartments__col">
-              <div class="apartments__item-text">${apartment.floor_current} из ${
+              <div class="apartments__item-text">${
+								apartment.floor_current
+							} из <span class="apartments__item-text-opacity">${
 						apartment.floor_count
-					}</div>
+					}</span> <span class="apartments__item-text-floor">этаж</span></div>
             </div>
             <div class="apartments__col">
-              <div class="apartments__item-text">${apartment.price.toLocaleString('ru')}</div>
+              <div class="apartments__item-text">${apartment.price.toLocaleString(
+								'ru',
+							)} <span class="apartments__item-rub">₽</span></div>
             </div>
           </div>
         </div>
@@ -161,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			max: 20000000,
 			from: apartments[0].price,
 			to: apartments[apartments.length - 1].price,
-			prefix: '<span class="filter__tooltip-text">от </span>',
+			// prefix: '<span class="filter__tooltip-text">от </span>',
 		});
 
 		$('#filter-slider-square').ionRangeSlider({
@@ -170,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			max: 20000000,
 			from: apartments[0].price,
 			to: apartments[apartments.length - 1].price,
-			prefix: '<span class="filter__tooltip-text">от </span>',
+			// prefix: '<span class="filter__tooltip-text">от </span>',
 		});
 
 		const filterSliderPrice = $('#filter-slider-price').data('ionRangeSlider');
@@ -181,9 +187,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			filterSliderSquare.reset();
 		});
 
-		document.querySelectorAll('.irs-to .filter__tooltip-text').forEach((item) => {
-			item.textContent = 'до ';
-		});
+		// document.querySelectorAll('.irs-to .filter__tooltip-text').forEach((item) => {
+		// 	item.textContent = 'до ';
+		// });
 	};
 
 	const goTopBtn = document.querySelector('.apartments__btn-go-top');
